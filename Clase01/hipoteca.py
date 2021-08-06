@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
 """
-Created on Thu Aug  5 00:00:13 2021
+Created on Thu Aug  5 19:05:42 2021
 
 @author: cris
 """
@@ -19,14 +19,16 @@ pago_extra_mes_fin = 108
 pago_extra = 1000
 
 while saldo > 0:   
-    if mes >= pago_extra_mes_comienzo: 
-        while mes <= pago_extra_mes_fin: 
-            saldo = saldo * (1+tasa/12) - pago_mensual - pago_extra
-            total_pagado = total_pagado + pago_mensual + pago_extra
-            mes += 1
-            print(mes, round(total_pagado,2), round(saldo, 2))
+    if (saldo - (pago_mensual*2)) < 0:
+        pago_mensual = saldo
+    while (mes >= pago_extra_mes_comienzo-1) and (mes <= pago_extra_mes_fin-1): # Resta un mes porque la cuenta comienza en 0
+        saldo = saldo * (1+tasa/12) - pago_mensual - pago_extra
+        total_pagado = total_pagado + pago_mensual + pago_extra
+        mes += 1
+        #print(mes, round(total_pagado,2), round(saldo, 2))
     saldo = saldo * (1+tasa/12) - pago_mensual 
     total_pagado = total_pagado + pago_mensual
     mes += 1
-    print(mes, round(total_pagado,2), round(saldo, 2))
+    print(mes, total_pagado, saldo, pago_mensual) 
+    #print(mes, round(total_pagado,2), round(saldo, 2))
 print('Total pagado', round(total_pagado, 2), "Meses:", mes)
