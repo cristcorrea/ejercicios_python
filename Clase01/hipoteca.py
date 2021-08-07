@@ -19,8 +19,8 @@ pago_extra_mes_fin = 108
 pago_extra = 1000
 
 while saldo > 0:   
-    if (saldo - (pago_mensual*2)) < 0:
-        pago_mensual = saldo
+    # if (saldo - (pago_mensual*2)) < 0:
+    #     pago_mensual = saldo
     while (mes >= pago_extra_mes_comienzo-1) and (mes <= pago_extra_mes_fin-1): # Resta un mes porque la cuenta comienza en 0
         saldo = saldo * (1+tasa/12) - pago_mensual - pago_extra
         total_pagado = total_pagado + pago_mensual + pago_extra
