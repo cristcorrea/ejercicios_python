@@ -34,5 +34,4 @@ for palabra in palabras:
             auxiliar += palabra + " "
     frase_t += auxiliar 
 print(frase_t)
-        
-        
+                
