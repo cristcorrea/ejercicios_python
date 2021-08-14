@@ -1,17 +1,21 @@
-#!/usr/bin/env python3
 # -*- coding: utf-8 -*-
 """
-Created on Sat Aug  7 16:02:58 2021
+Created on Sat Aug 14 16:27:16 2021
 
-@author: cris
+@author: Admin
 """
-def costo_camion(): 
-    f = open("Data/camion.csv", "rt")
-    headers = next(f).split(",")
-    resultado = 0.0
-    for line in f: 
-        row = line.split(",")
-        sumar = int(row[1])*float((row[2]))
-        resultado += sumar
-    f.close()
-    return resultado
+
+import csv
+
+def costo_camion(nombre_archivo):
+    f = open(nombre_archivo)
+    costo_total=0
+    rows = csv.reader(f)
+    headers = next(rows)
+    for row in rows:
+        costo_unitario =int(row[1]) * float(row[2])
+        costo_total += costo_unitario
+    return(costo_total)   
+
+costo = costo_camion('camion.csv')
+print('Costo total:', costo)
