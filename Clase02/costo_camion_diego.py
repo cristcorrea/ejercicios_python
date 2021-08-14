@@ -13,9 +13,12 @@ def costo_camion(nombre_archivo):
     rows = csv.reader(f)
     headers = next(rows)
     for row in rows:
-        costo_unitario =int(row[1]) * float(row[2])
-        costo_total += costo_unitario
+        try:
+            costo_unitario =int(row[1]) * float(row[2])
+            costo_total += costo_unitario
+        except:
+            print(f'{row[0]} tiene datos faltantes')
     return(costo_total)   
 
-costo = costo_camion('camion.csv')
+costo = costo_camion('missing.csv')
 print('Costo total:', costo)
