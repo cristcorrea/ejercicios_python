@@ -10,7 +10,7 @@ cadena = 'Geringoso'
 capadepenapa = ''
 for c in cadena:
         if c in "aeiouAEIOU": 
-            capadepenapa += c
-            capadepenapa += "p"
+            capadepenapa += c + 'p'
+            #capadepenapa += "p"
         capadepenapa += c
 print(capadepenapa)

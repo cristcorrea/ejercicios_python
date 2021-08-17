@@ -1,11 +1,13 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
 """
-Created on Sat Aug  7 16:02:58 2021
+Created on Wed Aug 11 23:32:03 2021
 
 @author: cris
 """
+#camion_commandline.py
 import csv
+import sys
 def costo_camion(nombre_archivo): 
     f = open(nombre_archivo)
     rows = csv.reader(f)
@@ -20,5 +22,11 @@ def costo_camion(nombre_archivo):
     f.close()
     return resultado
 
+if len(sys.argv) == 2:
+    nombre_archivo = sys.argv[1]
+else:
+    nombre_archivo = "Data/camion.csv"
+    
 
-
+costo = costo_camion(nombre_archivo)
+print('Costo total:', costo)
