@@ -9,7 +9,7 @@ Created on Tue Aug 17 09:25:15 2021
 import csv
 
 def leer_camion(): 
-    f = open('Data/camion.csv')
+    f = open('../Data/camion.csv')
     rows = csv.reader(f)
     headers = next(rows)
     camion = []
@@ -19,7 +19,7 @@ def leer_camion():
     return camion
 
 def leer_precios(): 
-    f = open('Data/precios.csv')
+    f = open('../Data/precios.csv')
     rows = csv.reader(f)
     precios_dic = {}
     for i, row in enumerate(rows):
