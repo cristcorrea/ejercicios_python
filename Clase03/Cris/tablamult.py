@@ -17,7 +17,7 @@ for i, numero in enumerate(numeros):
         lista.append(resultado)
     lista2.append(tuple(lista))
 
-print("{:>4}{:>2}{:>3}{:>3}{:>3}{:>3}{:>3}{:>3}{:>3}{:>3}".format("0","1", "2","3", "4", "5", "6", "7", "8", "9"))
+print("{:>5}{:>3}{:>3}{:>3}{:>3}{:>3}{:>3}{:>3}{:>3}{:>3}".format("0","1", "2","3", "4", "5", "6", "7", "8", "9"))
 print("-------------------------------")
 for i, tupla in enumerate(lista2):
     print("{:d}{:>1s}{:>3d}{:>3}{:>3}{:>3}{:>3}{:>3}{:>3}{:>3}{:>3}{:>3d}".format(i,":",tupla[0], tupla[1], tupla[2], tupla[3], tupla[4], tupla[5],
