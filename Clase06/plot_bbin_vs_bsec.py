@@ -35,6 +35,13 @@ def generar_lista(n, m):
 def generar_elemento(m):
     return random.randint(0, m-1)
 
+<<<<<<< HEAD
+=======
+# m = 10000
+# n = 100
+# k = 1000
+
+>>>>>>> dd6197440bbf4034be4ba08607078bafc619f4a2
 
 def experimento_secuencial_promedio(lista, m, k):
     comps_tot = 0
@@ -75,7 +82,10 @@ def graficar_bbin_vs_bseq(m, k):
     plt.xlabel("Largo de la lista")
     plt.ylabel("Cantidad de comparaciones")
     plt.title("Complejidad de la Búsqueda")
+<<<<<<< HEAD
     
+=======
+>>>>>>> dd6197440bbf4034be4ba08607078bafc619f4a2
     plt.legend()
     plt.show()
 

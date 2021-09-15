@@ -78,11 +78,13 @@ def leer_arboles(nombre_archivo):
             arbol = {name:s for name, s in zip(headers, row)}
             arboleda.append(arbol)
     return arboleda
-        
+
+especies = ['Eucalipto', 'Palo borracho rosado', 'Jacarandá']
 arboleda = leer_arboles('../Data/arbolado.csv')
-H = [(float(arbol['altura_tot']), float(arbol['diametro'])) for arbol in arboleda if arbol['nombre_com'] == 'Jacarandá']
 
-
+def medidas_de_especies(especies,arboleda):
+    H = {name: [(float(arbol['altura_tot']), float(arbol['diametro'])) for arbol in arboleda if arbol['nombre_com'] == especies[i]] for i, name in enumerate(especies)}
+    return H
 
 
 

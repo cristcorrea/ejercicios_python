@@ -30,3 +30,14 @@ def maximo(lista):
         if e > m:
             m = e
     return m
+    
+def busqueda_lineal_ordenada(lista, e):
+    pos = -1
+    lista.sort()
+    for i, z in enumerate(lista):
+        if z == e:
+            pos = i
+            break
+        elif z >= e:
+            break
+    return pos

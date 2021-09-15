@@ -16,7 +16,7 @@ def costo_camion(nombre_archivo):
             sumar = int(line[1])*float((line[2]))
             resultado += sumar
         except:
-            print("Fila {} faltan datos".format(i+1))
+            print("Fila {}. No se puede interpretar: {}".format(i+1, line))
     f.close()
     return resultado
 
