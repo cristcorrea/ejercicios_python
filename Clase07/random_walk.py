@@ -10,13 +10,14 @@ import numpy as np
 import matplotlib.pyplot as plt
 
 
+
 def randomwalk(largo):
     pasos=np.random.randint (-1,2,largo)    
     return pasos.cumsum()
 
 def hacer_curvas(n_curvas, N):
-    ''' Recibe un n natural, genera n cantidad de curvas y las guarda 
-    en una lista'''
+    ''' Recibe un n natural y una cantidad de pasos N, genera n cantidad de 
+    curvas y las guarda en una lista'''
     lista_curvas = []
     for i in range(n_curvas):
         curva = randomwalk(N)
@@ -69,5 +70,6 @@ def dibujar_curvas(curvas, pasos):
     plt.plot(curvas[curva_cercana(curvas)])
     plt.xticks([]) 
     plt.show()
+
 
 dibujar_curvas(12, 100000)
