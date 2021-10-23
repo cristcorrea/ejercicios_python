@@ -12,9 +12,9 @@ import os
 
 #%%
 # Creo los dataframes 
-directorio = '../Data'
+directorio = '../../Data'
 archivo1 = 'arbolado-publico-lineal-2017-2018.csv'
-archivo2 = 'arbolado.csv'
+archivo2 = 'arbolado-en-espacios-verdes.csv'
 fveredas = os.path.join(directorio,archivo1)
 fparques = os.path.join(directorio,archivo2)
 df_parques = pd.read_csv(fparques)

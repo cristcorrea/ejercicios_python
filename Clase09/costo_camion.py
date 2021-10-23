@@ -12,13 +12,10 @@ import informe_final as infor
 def costo_camion(nombre_archivo): 
     resultado = 0
     camion = infor.leer_camion(nombre_archivo)
-    for i, cajon in enumerate(camion):
-        try:
-           ncajones = int(camion[i]['cajones'])
-           precio = float(camion[i]['precio'])
-           resultado += ncajones * precio
-        except:
-            print("Fila {}. No se puede interpretar: {}".format(i+1, cajon))
+    for cajon in camion:
+        ncajones = int(cajon.cajones)
+        precio = float(cajon.precio)
+        resultado += ncajones * precio
     print(resultado)
     return resultado
 
@@ -30,4 +27,3 @@ if __name__ == '__main__':
     import sys
     f_principal(sys.argv)
 
-#prueba = costo_camion('../Data/camion.csv')
