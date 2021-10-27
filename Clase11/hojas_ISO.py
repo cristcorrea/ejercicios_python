@@ -12,7 +12,7 @@ def medidas_hoja_A(N, val_ant = None):
     if N == 0 and val_ant == None:
         res = tuple(A0)
     elif N == 0:
-        res = val_ant
+        res = tuple(val_ant)
     else:
         if val_ant == None:
             val_ant = A0
